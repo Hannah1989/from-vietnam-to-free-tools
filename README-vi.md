@@ -140,6 +140,18 @@ Nếu thấy lượt xem chậm lại khoảng giờ thứ 6-8, đừng lo. Đó
 
 ---
 
+## Bảo mật dữ liệu
+
+Nếu bạn lo ngại về việc dữ liệu bị dùng để train AI, có thể tắt tùy chọn này trong Claude:
+
+Vào Settings, chọn Privacy, tắt tùy chọn "Improve Claude for everyone" (hoặc tương tự tùy phiên bản). Sau khi tắt, các cuộc hội thoại của bạn sẽ không được dùng để huấn luyện model.
+
+Nếu bạn dùng Claude cho công ty hoặc team, Claude Team và Enterprise mặc định không dùng dữ liệu để train. Nếu dùng qua API thì cũng không dùng để train theo mặc định.
+
+Với business cá nhân như tiệm nail, trang Facebook cá nhân thì dữ liệu đó là của bạn và bạn có toàn quyền quyết định. Nhưng nếu bạn đang làm cho công ty khác thì nên check policy của họ trước khi upload dữ liệu công ty lên bất kỳ AI tool nào.
+
+---
+
 ## Câu hỏi thường gặp
 
 Tôi chưa có bài viết nào thì sao?
