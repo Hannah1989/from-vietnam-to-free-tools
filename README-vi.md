@@ -11,23 +11,19 @@ Mình chia sẻ lại để cả nhà dùng cho trang của mình.
 
 ## Bạn cần gì
 
-- Tài khoản **Claude Pro** (claude.ai) $20/tháng
-- **Claude Code** cài trên máy tính (Windows hoặc Mac)
-- Hai file mình đính kèm trong bài: `SKILL.md` và `post-benchmarks.json`
+- Claude Desktop (tải miễn phí tại claude.ai/download)
+- Claude Pro $20/tháng để dùng tab Code
+- Các file trong repo này
 
 ---
 
-## Bước 1: Cài Claude Code
+## Bước 1: Cài Claude Desktop
 
-Vào **claude.ai/code** và làm theo hướng dẫn cài đặt cho hệ điều hành của bạn (Windows hoặc Mac).
+Vào claude.ai/download, tải về và cài đặt như bất kỳ app nào trên Windows hoặc Mac. Không cần terminal, không cần cài thêm gì khác.
 
-Sau khi cài xong, mở Terminal (Windows: nhấn phím Windows, gõ "cmd", nhấn Enter) và gõ thử:
+Sau khi cài xong, mở app lên. Bạn sẽ thấy hai tab ở trên cùng: Chat và Code.
 
-```
-claude --version
-```
-
-Nếu hiện số phiên bản là cài thành công.
+Tab Code cần Claude Pro $20/tháng. Tab Chat thì miễn phí và xử lý được 80% nhu cầu hàng ngày. Nhưng để dùng công cụ theo dõi bài viết thì cần tab Code.
 
 ---
 
@@ -35,22 +31,7 @@ Nếu hiện số phiên bản là cài thành công.
 
 Tạo một thư mục mới ở bất kỳ đâu trên máy tính. Đặt tên tuỳ ý, ví dụ: `theo-doi-trang`.
 
-Trong Terminal, điều hướng vào thư mục đó:
-
-```
-cd đường-dẫn-đến-thư-mục
-```
-
-Ví dụ trên Windows:
-```
-cd C:\Users\TenBan\Documents\theo-doi-trang
-```
-
----
-
-## Bước 3: Tạo cấu trúc thư mục
-
-Tạo các thư mục con theo đúng cấu trúc này (bạn có thể tạo thủ công hoặc dùng Terminal):
+Bên trong thư mục đó, tạo cấu trúc như sau (tạo thủ công bằng cách chuột phải, New Folder):
 
 ```
 theo-doi-trang/
@@ -58,38 +39,35 @@ theo-doi-trang/
 │   └── skills/
 │       └── performance-review/
 │           └── SKILL.md
-└── data/
-    └── content/
-        └── post-benchmarks.json
+├── data/
+│   └── content/
+│       └── post-benchmarks.json
+└── CLAUDE.md
 ```
 
-**Cách tạo nhanh trên Windows (copy paste vào Terminal):**
-```
-mkdir .claude\skills\performance-review
-mkdir data\content
-```
+Lưu ý: thư mục `.claude` bắt đầu bằng dấu chấm. Trên Windows, thư mục này có thể bị ẩn. Bạn vẫn có thể tạo bình thường, chỉ cần đặt tên đúng.
 
 ---
 
-## Bước 4: Lưu file SKILL.md
+## Bước 3: Copy các file vào đúng vị trí
 
-Copy nội dung file `SKILL.md` mình đính kèm và lưu vào:
-```
-.claude/skills/performance-review/SKILL.md
-```
+Từ repo này, copy từng file vào đúng đường dẫn:
 
-Không cần chỉnh sửa gì, file này chứa toàn bộ logic phân tích.
+- `SKILL.md` vào `.claude/skills/performance-review/SKILL.md`
+- `post-benchmarks.json` vào `data/content/post-benchmarks.json`
+- `CLAUDE.md` vào thư mục gốc (cùng cấp với `.claude` và `data`)
 
 ---
 
-## Bước 5: Tạo file dữ liệu bài viết
+## Bước 4: Điền thông tin của bạn vào CLAUDE.md
 
-Copy nội dung file `post-benchmarks.json` mình đính kèm và lưu vào:
-```
-data/content/post-benchmarks.json
-```
+Mở file `CLAUDE.md` và điền thông tin về trang và business của bạn. File này giúp Claude hiểu bạn là ai và làm việc trong ngữ cảnh của bạn, không phải từ đầu mỗi phiên.
 
-Mở file đó và đổi dòng đầu tiên thành tên trang của bạn:
+---
+
+## Bước 5: Điền tên trang vào post-benchmarks.json
+
+Mở file `post-benchmarks.json` và đổi dòng:
 
 ```json
 "page": "TÊN TRANG CỦA BẠN",
@@ -99,14 +77,14 @@ Mở file đó và đổi dòng đầu tiên thành tên trang của bạn:
 
 ## Bước 6: Nhập dữ liệu bài viết cũ (quan trọng)
 
-Đây là bước giúp Claude hiểu baseline của trang bạn. Không có bước này, công cụ không có gì để so sánh.
+Bước này giúp Claude hiểu baseline của trang bạn. Không có bước này, công cụ không có gì để so sánh.
 
 Với mỗi bài viết bạn đã đăng:
 
 1. Vào trang Facebook của bạn
-2. Mở bài viết đó, nhấn **"Xem thông tin chi tiết"** (Post insights)
+2. Mở bài viết đó, nhấn "Xem thông tin chi tiết" (Post insights)
 3. Chụp màn hình
-4. Mở Terminal, vào thư mục dự án, gõ `claude` để khởi động
+4. Mở Claude Desktop, chọn tab Code, trỏ vào thư mục dự án
 5. Nhập lệnh sau và đính kèm ảnh chụp màn hình:
 
 ```
@@ -122,25 +100,25 @@ Claude sẽ tự đọc ảnh, tính tỷ lệ và cập nhật file. Lặp lạ
 Mỗi khi muốn theo dõi một bài viết đang chạy:
 
 1. Vào Facebook, mở thông tin chi tiết bài viết, chụp màn hình
-2. Trong Claude Code, gõ:
+2. Mở Claude Desktop, chọn tab Code
+3. Gõ lệnh và đính kèm ảnh:
 
 ```
 /performance-review
 ```
 
-3. Đính kèm ảnh chụp màn hình, nhấn Enter
-
 Claude sẽ trả về:
 - Tỷ lệ chia sẻ, tỷ lệ theo dõi mới
+- Tốc độ tăng trưởng so với đỉnh
 - So sánh với các bài viết cũ của bạn
-- Nhận định: bài đang chạy tốt hay cần chú ý
+- Dự đoán lượt xem cuối cùng
 - Một hành động cụ thể cần làm ngay
 
 ---
 
 ## Bước 8: Khoá bài khi bài viết kết thúc
 
-Khi một bài viết đã ngừng tăng (thường sau 3–5 ngày), chụp màn hình lần cuối và nhập:
+Khi một bài viết đã ngừng tăng (thường sau 3-5 ngày), chụp màn hình lần cuối và nhập:
 
 ```
 bài này xong rồi
@@ -153,25 +131,28 @@ Claude sẽ tự cập nhật file, chuyển bài sang trạng thái "final" và
 ## Thời điểm nên chụp màn hình theo dõi
 
 Dựa trên thực nghiệm, bài viết thường có hai đợt tăng lượt xem:
-- Đợt 1: giờ 1–9 (khán giả buổi sáng/chiều múi giờ chính)
-- Đợt 2: giờ 9–21 tính từ lúc đăng (khán giả múi giờ thứ hai)
+- Đợt 1: giờ 1-9 (khán giả buổi sáng/chiều múi giờ chính)
+- Đợt 2: giờ 9-21 tính từ lúc đăng (khán giả múi giờ thứ hai)
 
-Thời điểm nên chụp: **3 giờ, 6 giờ, 9 giờ, 11 giờ, 21 giờ, 25 giờ, 36 giờ** sau khi đăng bài.
+Thời điểm nên chụp: 3 giờ, 6 giờ, 9 giờ, 11 giờ, 21 giờ, 25 giờ, 36 giờ sau khi đăng bài.
 
-Nếu thấy lượt xem chậm lại khoảng giờ thứ 6–8, đừng lo. Đó không phải bài đang chết mà là khoảng trống giữa hai đợt.
+Nếu thấy lượt xem chậm lại khoảng giờ thứ 6-8, đừng lo. Đó không phải bài đang chết mà là khoảng trống giữa hai đợt.
 
 ---
 
 ## Câu hỏi thường gặp
 
-**Tôi chưa có bài viết nào thì sao?**
-Bỏ qua Bước 6. Đăng bài đầu tiên, rồi dùng `/performance-review` theo dõi ngay từ đầu. Sau khi bài kết thúc, đó sẽ là baseline đầu tiên của bạn.
+Tôi chưa có bài viết nào thì sao?
+Bỏ qua Bước 6. Đăng bài đầu tiên, rồi dùng /performance-review theo dõi ngay từ đầu. Sau khi bài kết thúc, đó sẽ là baseline đầu tiên của bạn.
 
-**File SKILL.md có cần chỉnh sửa không?**
-Không cần. Toàn bộ thông tin riêng của bạn nằm trong `post-benchmarks.json`.
+File SKILL.md có cần chỉnh sửa không?
+Không cần. Toàn bộ thông tin riêng của bạn nằm trong post-benchmarks.json và CLAUDE.md.
 
-**Lệnh /performance-review không hoạt động?**
-Kiểm tra lại đường dẫn file SKILL.md, phải đúng là `.claude/skills/performance-review/SKILL.md`. Đảm bảo bạn đang chạy `claude` từ bên trong thư mục dự án.
+Lệnh /performance-review không hoạt động?
+Kiểm tra lại đường dẫn file SKILL.md, phải đúng là .claude/skills/performance-review/SKILL.md. Đảm bảo bạn đang mở tab Code và trỏ vào đúng thư mục dự án.
+
+Tab Code không hiện lên?
+Bạn cần Claude Pro $20/tháng. Tab Chat miễn phí nhưng không chạy được skill files.
 
 ---
 
