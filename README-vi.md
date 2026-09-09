@@ -99,9 +99,11 @@ Claude sẽ tự đọc ảnh, tính tỷ lệ và cập nhật file. Lặp lạ
 
 Mỗi khi muốn theo dõi một bài viết đang chạy:
 
-1. Vào Facebook, mở thông tin chi tiết bài viết, chụp màn hình
-2. Mở Claude Desktop, chọn tab Code
-3. Gõ lệnh và đính kèm ảnh:
+1. Vào trang Facebook của bạn, nhấn vào bài viết muốn theo dõi
+2. Nhấn vào biểu tượng 3 chấm (...) góc trên phải bài viết, chọn "Xem thông tin chi tiết"
+3. Chụp màn hình trang đó (Windows: phím Windows + Shift + S, Mac: Command + Shift + 4)
+4. Mở Claude Desktop, chọn tab Code
+5. Gõ lệnh, rồi dán ảnh thẳng vào chat (Ctrl+V trên Windows, Command+V trên Mac), không cần lưu file:
 
 ```
 /performance-review
