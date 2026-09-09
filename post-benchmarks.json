@@ -1,0 +1,55 @@
+{
+  "page": "TÊN TRANG CỦA BẠN",
+  "posts": [
+    {
+      "id": "001",
+      "topic": "Chủ đề bài viết đầu tiên",
+      "published": "YYYY-MM-DD",
+      "status": "pending",
+      "views": null,
+      "viewers": null,
+      "shares": null,
+      "saves": null,
+      "reactions": null,
+      "comments": null,
+      "follows": null,
+      "non_follower_pct": null,
+      "share_rate_pct": null,
+      "save_rate_pct": null,
+      "follow_rate_pct": null,
+      "notes": "",
+      "snapshots": []
+    }
+  ],
+  "thresholds": {
+    "share_rate_pct": {
+      "minimum_distribution": 0.10,
+      "outperforming": 0.15,
+      "exceptional": 0.20
+    },
+    "follow_rate_pct": {
+      "good": 0.10,
+      "strong": 0.15
+    },
+    "non_follower_pct": {
+      "algorithm_expanding_threshold": 95.0,
+      "note": "Tỷ lệ này tăng dần (85% → 93% → 96%+) = thuật toán đang mở rộng đến người lạ. Giữ nguyên hoặc giảm = bài đang chạy trong vòng khán giả cũ."
+    }
+  },
+  "distribution_patterns": {
+    "geographic_wave": {
+      "peak1_hours": "1-9",
+      "peak1_audience": "Khán giả giờ cao điểm buổi sáng/chiều",
+      "trough": "Khoảng giờ 6-8 lượt xem chậm lại — KHÔNG phải bài đang chết",
+      "peak2_hours": "9-21",
+      "peak2_audience": "Khán giả múi giờ thứ hai (nếu có) — thường mạnh hơn đợt 1",
+      "note": "Đăng lúc 9-11 giờ sáng giờ địa phương để hai đợt rơi vào khung giờ vàng của từng nhóm khán giả."
+    },
+    "author_reply_signal": {
+      "optimal_window_hours": "6-9",
+      "observed_effect": "Tăng tốc độ ~3 lần sau khi tác giả trả lời bình luận",
+      "instruction": "Trả lời bình luận có giá trị nhất trong phần bình luận — không cần trả lời tất cả, một câu trả lời tốt là đủ."
+    },
+    "recommended_check_cadence_hours": [3, 6, 9, 11, 21, 25, 36]
+  }
+}
