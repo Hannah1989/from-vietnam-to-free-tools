@@ -109,6 +109,8 @@ Mỗi khi muốn theo dõi một bài viết đang chạy:
 /performance-review
 ```
 
+Bạn cũng có thể hỏi Claude bằng ngôn ngữ tự nhiên cho các câu hỏi thông thường, nhưng để chạy đúng công cụ phân tích này thì dùng lệnh /performance-review. Lệnh này đảm bảo Claude chạy đúng logic phân tích, tự động lưu số liệu, và trả về kết quả theo đúng định dạng.
+
 Claude sẽ trả về:
 - Tỷ lệ chia sẻ, tỷ lệ theo dõi mới
 - Tốc độ tăng trưởng so với đỉnh
